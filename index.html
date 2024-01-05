@@ -68,38 +68,13 @@
                height: 100%;
             }
         </style>
-    <!-- Aggiungi il codice JavaScript qui -->
-    <script type="text/javascript">
-        window.addEventListener('load', () => {
-            const canvas = document.getElementById('canvas');
-            const context = canvas.getContext('2d');
-
-            // Funzione per aggiornare le dimensioni del canvas
-            function resizeCanvas() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                
-                // Puoi anche eseguire azioni aggiuntive dopo il ridimensionamento
-                // Ad esempio, ridisegnare il contenuto del canvas se necessario
-                // context.clearRect(0, 0, canvas.width, canvas.height);
-                // drawGame(); // Una funzione immaginaria per ridisegnare il gioco
-            }
-
-            // Chiama la funzione di ridimensionamento al caricamento della pagina e quando la finestra cambia dimensione
-            window.addEventListener('resize', resizeCanvas, false);
-            window.addEventListener('orientationchange', resizeCanvas, false);
-
-            // Chiama la funzione di ridimensionamento per impostare le dimensioni iniziali
-            resizeCanvas();
-        });
-    </script>
     </head>
 
     <body>
         <div class="gm4html5_div_class" id="gm4html5_div_id">
         <img src="html5game/splash.png" id="GM4HTML5_loadingscreen" alt="GameMaker:HTML5 loading screen" style="display:none;"/>
             <!-- Create the canvas element the game draws to -->
-            <canvas id="canvas">
+            <canvas id="canvas" width="3200" height="1700">
                <p>Your browser doesn't support HTML5 canvas.</p>
             </canvas>
         </div>

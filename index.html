@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta http-equiv="pragma" content="no-cache"/>
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name ="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=0.67, user-scalable=1" />
+        <meta name ="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, user-scalable=1" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta charset="utf-8"/>
 
@@ -21,6 +21,7 @@
               padding: 0px;
               border: 0px;
             }
+            html, body { width:100%; height:100%; }
             canvas {
                       image-rendering: optimizeSpeed;
                       -webkit-interpolation-mode: nearest-neighbor;
@@ -28,9 +29,7 @@
                       margin: 0px;
                       padding: 0px;
                       border: 0px;
-                    height: 100vh;
-                    width: 100vw;
-                    display: block;
+                      display: block;
             }
             :-webkit-full-screen #canvas {
                  width: 100%;
@@ -70,22 +69,27 @@
                width: 100%;
                height: 100%;
             }
-            /* Regole CSS per il canvas durante il caricamento */
-            canvas.loading {
-                width: 100%;
-                height: 100vh; /* Altezza della finestra del browser */
-            }
+
         </style>
     </head>
 
     <body>
         <div class="gm4html5_div_class" id="gm4html5_div_id">
-        <img src="html5game/splash.png" id="GM4HTML5_loadingscreen" alt="GameMaker:HTML5 loading screen" style="display:none;"/>
             <!-- Create the canvas element the game draws to -->
-            <canvas id="canvas" width=9000 height=9000>
+            <canvas id="canvas">
                <p>Your browser doesn't support HTML5 canvas.</p>
             </canvas>
         </div>
+        <script>
+              const canvas = document.getElementById('canvas');
+              canvas.width = window.innerWidth;
+              canvas.height = window.innerHeight;
+              function resizeCanvas() {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                }
+              window.addEventListener('resize', resizeCanvas, false);
+        </script>
 
         <!-- Run the game code -->
         <script type="text/javascript" src="html5game/AOE_TYPE.js?CHSAC=1463776863"></script>

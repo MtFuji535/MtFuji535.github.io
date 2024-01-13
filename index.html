@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta http-equiv="pragma" content="no-cache"/>
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name ="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="viewport" id="viewport" content="">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta charset="utf-8"/>
 
@@ -71,6 +71,10 @@
     </head>
 
     <body>
+         <script type="text/javascript">
+            var scale = (1/window.devicePixelRatio).toString();
+            document.getElementById("viewport").setAttribute("content", "initial-scale="+scale+", maximum-scale="+scale+", minimum-scale="+scale+", width=device-width, user-scalable=no, minimal-ui");
+        </script>
         <div class="gm4html5_div_class" id="gm4html5_div_id">
         <img src="html5game/splash.png" id="GM4HTML5_loadingscreen" alt="GameMaker:HTML5 loading screen" style="display:none;"/>
             <!-- Create the canvas element the game draws to -->
